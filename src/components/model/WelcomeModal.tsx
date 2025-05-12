@@ -7,7 +7,7 @@ interface WelcomeModalProps {
 const WelcomeModal: React.FC<WelcomeModalProps> = ({ onClose }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-[60] transition-opacity duration-300 ease-in-out animate-fadeIn">
-<div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 w-[90%] sm:max-w-md md:max-w-lg shadow-lg animate-fadeIn">
+<div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 w-[80%] sm:max-w-md md:max-w-lg shadow-lg animate-fadeIn">
 <h2 className="text-xl font-bold mb-4">Welcome to SGD</h2>
         <p className="text-gray-700 mb-4">
           The Smart Grounding Dashboard (SGD) provides real-time insights into

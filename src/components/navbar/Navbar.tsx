@@ -77,6 +77,8 @@ const Navbar: React.FC = () => {
           </h1>
         </div>
 
+
+     {/* Search section */}
         <div ref={wrapperRef} className="relative w-1/2">
           <input
             type="text"
@@ -106,8 +108,8 @@ const Navbar: React.FC = () => {
           </svg>
 
           {showDropdown && suggestions.length > 0 && (
-  <ul className="absolute top-full left-0 mt-2 w-full md:w-96 lg:w-1/2 bg-white border rounded-md shadow-lg max-h-58 overflow-y-auto z-50">
-              {suggestions.map((item, idx) => (
+            <ul className="absolute mt-2 w-full bg-white border rounded-md shadow-lg max-h-58 overflow-y-auto z-50">
+            {suggestions.map((item, idx) => (
                 <li
                   key={idx}
                   className="px-4 py-2 hover:bg-blue-100 cursor-pointer"
