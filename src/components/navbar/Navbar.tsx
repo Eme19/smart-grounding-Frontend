@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
               className="w-8 h-8"
               fill="none"
               stroke="currentColor"
-              strokeWidth="1.5"
+              strokeWidth="1"
               viewBox="0 0 24 24"
             >
               <g strokeLinecap="round" strokeLinejoin="round">
@@ -74,14 +74,15 @@ const Navbar: React.FC = () => {
             </svg>
           </div>
           {/* Title */}
-          <h1 className="text-xl font-bold text-transparent bg-gradient-to-r from-blue-900 to-gray-900 bg-clip-text">
-            SGD
-          </h1>
+          <h1 className="hidden md:block text-xl font-bold text-transparent bg-gradient-to-r from-blue-900 to-gray-900 bg-clip-text">
+  SGD
+</h1>
+
         </div>
 
 
      {/* Search section */}
-        <div ref={wrapperRef} className="relative w-full md:w-1/2">
+        <div ref={wrapperRef} className="relative mx-2 w-full md:w-1/2">
           <input
             type="text"
             value={query}
