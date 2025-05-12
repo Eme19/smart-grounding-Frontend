@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const mockData = [
   "Real-Time Grounding Monitor",
@@ -79,7 +81,7 @@ const Navbar: React.FC = () => {
 
 
      {/* Search section */}
-        <div ref={wrapperRef} className="relative w-1/2">
+        <div ref={wrapperRef} className="relative w-full md:w-1/2">
           <input
             type="text"
             value={query}
@@ -108,20 +110,22 @@ const Navbar: React.FC = () => {
           </svg>
 
           {showDropdown && suggestions.length > 0 && (
-            <ul className="absolute mt-2 w-full bg-white border rounded-md shadow-lg max-h-58 overflow-y-auto z-50">
-            {suggestions.map((item, idx) => (
-                <li
-                  key={idx}
-                  className="px-4 py-2 hover:bg-blue-100 cursor-pointer"
-                  onClick={() => {
-                    setQuery(item);
-                    setShowDropdown(false);
-                  }}
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
+    <ul className="absolute mt-2 w-full bg-white border rounded-md shadow-lg max-h-58 overflow-y-auto z-50">
+    {suggestions.map((item, idx) => (
+      <li
+        key={idx}
+        className="px-4 py-2 hover:bg-blue-100 cursor-pointer flex justify-between items-center"
+        onClick={() => {
+          setQuery(item);
+          setShowDropdown(false);
+        }}
+      >
+        <span>{item}</span>
+        <i className="fa-solid fa-chevron-right text-gray-400"></i>
+        </li>
+    ))}
+  </ul>
+  
           )}
         </div>
 
