@@ -19,6 +19,7 @@ function Dashboard() {
 
     try {
       const res = await api.get("/sensor-data/");
+      console.log("API Response:", res.data);
       setData(res.data);
     } catch (error) {
       console.error("Error fetching sensor data", error);
