@@ -15,6 +15,8 @@ function Dashboard() {
   // Fetch data function with debouncing mechanism
   const fetchData = useCallback(async () => {
     console.log("Fetching data for the first time...");
+    console.log("API Base URL:", process.env.REACT_APP_API_URL);
+
     try {
       const res = await api.get("/sensor-data/");
       setData(res.data);
