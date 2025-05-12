@@ -1,24 +1,31 @@
-/* Tailwind directives (should be first) */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Import Poppins font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-/* Reset & base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Set fonts and background globally */
+/* tailwind.css or globals.css */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+
+
 html, body {
   height: 100%;
   font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  background-color: #ffffff; /* Tailwind's gray-900 */
-  color: #f3f4f6;            /* Tailwind's gray-100 */
+  background-color: #ffffff!important;
+  color: #f3f4f6;          
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

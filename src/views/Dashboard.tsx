@@ -4,6 +4,8 @@ import { useGroundingChart, DataPoint } from "../hooks/useGroundingChart";
 import api from "../plugins/api";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import WelcomeModal from "../components/model/WelcomeModal";
+
 
 function Dashboard() {
   const [data, setData] = useState<DataPoint[]>([]);
@@ -11,15 +13,25 @@ function Dashboard() {
     "ground_resistance" | "temperature"
   >("ground_resistance");
   const { containerRef, dimensions } = useResponsiveChart();
+  const [showModal, setShowModal] = useState(false);
 
-  // Fetch data function with debouncing mechanism
+  useEffect(() => {
+    if (!sessionStorage.getItem("modalShown")) {
+      const timer = setTimeout(() => {
+        setShowModal(true);
+        sessionStorage.setItem("modalShown", "true");
+      }, 1200); // 1.2 second delay
+
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   const fetchData = useCallback(async () => {
     console.log("Fetching data for the first time...");
     console.log("API Base URL:", process.env.REACT_APP_API_URL);
 
     try {
       const res = await api.get("/sensor-data/");
-      console.log("API Response:", res.data);
       setData(res.data);
     } catch (error) {
       console.error("Error fetching sensor data", error);
@@ -53,6 +65,8 @@ function Dashboard() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100 text-gray-800">
+            {showModal && <WelcomeModal onClose={() => setShowModal(false)} />}
+
       <Navbar />
 
       <main className="flex-grow max-w-9xl mx-auto p-6 mt-1">

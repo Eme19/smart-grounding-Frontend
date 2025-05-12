@@ -8,7 +8,7 @@ type FooterProps = {
 
 const Footer: React.FC<FooterProps> = ({ className = "" }) => {
   const currentYear = new Date().getFullYear();
-  const version = "v1.2.3"; // bump as you release
+  const version = "v1.2.3"; 
   const lastUpdated = "May 12, 2025"; // can be update dynamically
 
   return (
@@ -21,8 +21,7 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
           <h4 className="text-lg font-semibold text-white mb-2">About</h4>
           <p className="text-sm text-gray-400">
             The Smart Grounding Dashboard (SGD) delivers real-time sensor
-            insights for ground resistance monitoring. Built with React, D3.js,
-            and Tailwind CSS.
+            insights for ground resistance monitoring. 
           </p>
         </div>
 
