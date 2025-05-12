@@ -194,7 +194,7 @@ const Navbar: React.FC = () => {
       {/* Mobile dropdown */}
       {open && (
         <div className="absolute md:hidden w-full bg-white shadow-inner  z-40">
-          <ul className="flex flex-col space-y-1 px-6 py-4 text-gray-700 text-lg">
+          <ul className="flex flex-col ml-2 space-y-2 px-6 py-4 text-gray-700 text-lg">
             <li>
               <a
                 href="#"
