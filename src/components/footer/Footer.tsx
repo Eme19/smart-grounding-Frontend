@@ -63,7 +63,7 @@ const Footer: React.FC<FooterProps> = ({ className = "" }) => {
             <li className="flex space-x-4 mt-2">
               {/* GitHub Icon */}
               <a
-                href="https://github.com/your-repo"
+                href="https://github.com/Eme19/smart-grounding-Frontend"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white transition-colors transform hover:scale-90 duration-200"
