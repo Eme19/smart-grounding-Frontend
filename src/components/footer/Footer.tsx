@@ -9,7 +9,7 @@ type FooterProps = {
 const Footer: React.FC<FooterProps> = ({ className = "" }) => {
   const currentYear = new Date().getFullYear();
   const version = "v1.2.3"; // bump as you release
-  const lastUpdated = "May 11, 2025"; // can be update dynamically
+  const lastUpdated = "May 12, 2025"; // can be update dynamically
 
   return (
     <footer
